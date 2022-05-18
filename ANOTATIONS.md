@@ -16,5 +16,9 @@
 
         --> presentation - where we will have all the UI, simple logics to handle and to transfer the data to the use cases on the domain.
             --> controllers - only simple logic to handle simple cases, then move all data to the use Cases in Domain
-            --> pages
-            --> widgets
+            --> pages - pages of the app
+            --> widgets - widgets globally used in the many pages in the app.
+
+
+#PACKAGES
+  --> dartz - in that package we are allowed to use some functional programming stuff that simplify our process to get errors and handle they in the best way possible.
