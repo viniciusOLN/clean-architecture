@@ -5,6 +5,10 @@
   - features
     --> name_feature
         --> data - provide the data to the others layers.
+            --> datasources - data layer(will get the data from the sources).
+            --> models - model of the data
+            --> repositories - implementations of repositories not the abstract.
+
         --> domain - layer that should not be susceptible to do changing datasources. (should be independent of anything inside the app). will contains the business logic inside the usecases.
             --> use cases - business logic of the feature.
             --> entities - class feature(more than one).
