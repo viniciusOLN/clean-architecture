@@ -20,8 +20,9 @@ void main() {
       'should get trivia from the repository',
       () async {
         //arrange
-        when(mockNumberTriviaRepository.getRandomNumberTrivia())
-            .thenAnswer((_) async => const Right(tNumberTrivia));
+        when(mockNumberTriviaRepository.getRandomNumberTrivia()).thenAnswer(
+          (_) async => const Right(tNumberTrivia),
+        );
         // act
         final result = await usecase(NoParams());
         // assert
