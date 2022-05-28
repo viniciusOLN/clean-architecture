@@ -17,20 +17,25 @@ void main() {
   final mockNumberTriviaRepository = MockNumberTriviaRepository();
   final usecase = GetConcreteNumberTrivia(mockNumberTriviaRepository);
 
-  group('triviaNumber: ', () {
-    test(
-      'should get trivia for the number from the repository',
-      () async {
-        //arrange
-        when(mockNumberTriviaRepository.getConcreteNumberTrivia(any))
-            .thenAnswer((_) async => const Right(tNumberTrivia));
-        // act
-        final result = await usecase(const Params(tNumber));
-        // assert
-        expect(result, const Right(tNumberTrivia));
-        verify(mockNumberTriviaRepository.getConcreteNumberTrivia(tNumber));
-        verifyNoMoreInteractions(mockNumberTriviaRepository);
-      },
-    );
-  });
+  group(
+    'triviaNumber: ',
+    () {
+      test(
+        'should get trivia for the number from the repository',
+        () async {
+          //arrange
+          when(mockNumberTriviaRepository.getConcreteNumberTrivia(any))
+              .thenAnswer(
+            (_) async => const Right(tNumberTrivia),
+          );
+          // act
+          final result = await usecase(const Params(tNumber));
+          // assert
+          expect(result, const Right(tNumberTrivia));
+          verify(mockNumberTriviaRepository.getConcreteNumberTrivia(tNumber));
+          verifyNoMoreInteractions(mockNumberTriviaRepository);
+        },
+      );
+    },
+  );
 }
